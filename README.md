@@ -1,40 +1,47 @@
 # Justin Figma Design
 
-`justin-figma-design` gives Cursor a repeatable way to work with Figma:
-inspect screens, refine layouts, review components, check themes, and
-visually QA the result. You do not need to write code to use it. In Cursor,
-you can also call it `/jfd`.
+`justin-figma-design` helps your AI work with Figma: inspect screens, improve
+spacing, review components, check themes, and visually QA the result. It is
+agent-agnostic and works with any Agent Skills-compatible AI app, including
+Cursor, Claude Code, Codex, and others. You can also call it `/jfd`.
+
+> ⚠️ **Required for real Figma work:**
+> [Figma Console MCP](https://github.com/southleft/figma-console-mcp) is the
+> bridge between your AI app and Figma. This skill is the recipe; Console MCP
+> is what lets the AI see and edit the canvas.
 
 ## What you need
 
-- Cursor, or another app that supports Agent Skills
-- Figma Desktop
-- Node.js (only needed for the one-line install and NPX setup steps)
-- Figma Console MCP, which connects the AI to the Figma file
+| | |
+|---|---|
+| 🤖 | An AI app that supports Agent Skills |
+| 🎨 | Figma Desktop |
+| 🔌 | **Required:** [Figma Console MCP](https://github.com/southleft/figma-console-mcp) |
+| 📦 | **Optional:** [Node.js LTS](https://nodejs.org/en/download/) for the one-line `npx` install |
 
-Download [Node.js LTS](https://nodejs.org/en/download/) if it is not already
-installed. You can skip Node.js only if someone has already installed the
-skill and connected Figma for you.
+The local MCP server and **Desktop Bridge** are required for Figma edits and
+screenshots. The hosted or remote connection is for looking and investigating
+only.
 
 ## Install the skill
 
 ### Recommended: one-line install
 
-Open your computer's Terminal and paste:
+Open Terminal and paste:
 
 ```bash
 npx skills add 1955m/justin-figma-design
 ```
 
-The installer may ask where to install it. Choose **Cursor** and the current
-project for a project-only install. To make it available in every project,
-use:
+When asked which AI app to use, choose the one you work with. You can install
+the skill for all supported apps if the installer offers that choice. To make
+it available across projects, use:
 
 ```bash
-npx skills add 1955m/justin-figma-design --global --agent cursor
+npx skills add 1955m/justin-figma-design --global
 ```
 
-You can also use the full GitHub URL:
+You can also install from the full GitHub URL:
 
 ```bash
 npx skills add https://github.com/1955m/justin-figma-design
@@ -45,55 +52,44 @@ npx skills add https://github.com/1955m/justin-figma-design
 1. Open the repository on
    [GitHub](https://github.com/1955m/justin-figma-design).
 2. Choose **Code → Download ZIP**, then unzip the download.
-3. Copy the unzipped skill folder into your project's skill folder:
+3. Copy the skill folder into the portable skills location:
 
    ```text
    .agents/skills/justin-figma-design/
    ```
 
-   Cursor can also read:
+   Some AI apps use their own folder, such as `.cursor/skills/` or
+   `.claude/skills/`. Follow your app's skill-install instructions if needed.
+4. Restart or reload your AI app.
 
-   ```text
-   .cursor/skills/justin-figma-design/
-   ```
+Manual copying is useful when you do not want to install Node.js.
 
-4. Restart or reload Cursor so it can discover the skill.
-
-The `npx skills` installer handles these folders for you. Manual copying is
-useful when you do not want to install Node.js.
-
-## Connect Figma for real editing
-
-Installing the skill gives Cursor the workflow instructions. Connecting
-Figma Console MCP gives it access to the canvas.
+## Connect Figma
 
 1. Install or enable
-   [Figma Console MCP](https://github.com/southleft/figma-console-mcp) in
-   Cursor as `user-figma-console`.
+   [Figma Console MCP](https://github.com/southleft/figma-console-mcp) for
+   your AI app.
 2. Open the Figma file you want to work on in **Figma Desktop**.
 3. Start the local/NPX MCP server and connect its **Desktop Bridge** to the
-   open file. Follow the current setup instructions in the Figma Console MCP
-   repository; its setup steps can change over time.
-4. Return to Cursor and confirm that the target Figma file is active.
-
-The hosted or remote connection is suitable for looking and investigating.
-The local server plus Desktop Bridge is required for edits and screenshots.
+   open file. Follow the current setup instructions in the Console MCP
+   repository.
+4. Return to your AI app and confirm that the target Figma file is active.
 
 ## Start your first session
 
-1. Open your design project folder in Cursor.
-2. In Cursor Chat, type:
+1. Open your design project folder in your AI app.
+2. In the chat, type:
 
    ```text
    jfd init
    ```
 
-   You can use `/jfd init` if slash commands are enabled. This creates the
+   You can use `/jfd init` if slash commands are supported. This creates the
    project's `docs/` memory files and does not change anything in Figma.
-3. Paste your Figma link or say which open Figma file you want to work on.
+3. Paste your Figma link or identify the open file.
 4. Describe the design task in plain language.
 
-For example:
+Try prompts like:
 
 ```text
 Audit this screen for spacing, alignment, and clipping.
@@ -109,11 +105,11 @@ Review this flow first and create a read-only design baseline before editing.
 
 ## What to expect
 
-The skill asks the AI to inspect the current Figma file before changing it,
-reuse existing components and styles, make focused edits, and check the
-result with screenshots. It keeps project notes separate from the reusable
-skill instructions, so your workspace can remember its own fonts, layouts,
-screens, and design decisions.
+- 👀 The AI inspects the current Figma file before changing it.
+- 🧩 It reuses existing components, styles, and design-system patterns.
+- 📸 It checks visual changes with screenshots.
+- 📝 It keeps project-specific notes in `docs/`, separate from the reusable
+  skill instructions.
 
 ## Package contents
 
@@ -126,5 +122,5 @@ justin-figma-design/
 └── examples/      # Example operating scenarios
 ```
 
-For the detailed setup and first-session workflow, see
+For detailed setup and first-session guidance, see
 [references/getting-started.md](references/getting-started.md).
