@@ -12,12 +12,10 @@ Cursor, Claude Code, Codex, and others. You can also call it `/jfd`.
 
 ## What you need
 
-| | |
-|---|---|
-| 🤖 | An AI app that supports Agent Skills |
-| 🎨 | Figma Desktop |
-| 🔌 | **Required:** [Figma Console MCP](https://github.com/southleft/figma-console-mcp) |
-| 📦 | **Optional:** [Node.js LTS](https://nodejs.org/en/download/) for the one-line `npx` install |
+- 🤖 An AI app that supports Agent Skills
+- 🎨 Figma Desktop
+- 🔌 **Required:** [Figma Console MCP](https://github.com/southleft/figma-console-mcp)
+- 📦 **Optional:** [Node.js LTS](https://nodejs.org/en/download/) for the one-line `npx` install
 
 The local MCP server and **Desktop Bridge** are required for Figma edits and
 screenshots. The hosted or remote connection is for looking and investigating
