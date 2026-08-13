@@ -47,6 +47,11 @@ unrelated board. When active-file routing can change, navigate and confirm
 the target before capturing; do not parallelize routing-dependent
 screenshots.
 
+Treat structural/family QA and designer-detail finish QA as two separate
+passes. The first proves hierarchy, bounds, states, and family coverage; the
+second proves that the finished surface is usable and visually coherent.
+Run both before closeout, even when no human designer is reviewing the file.
+
 ## Design-detail checklist
 
 Check the details most likely to regress:
@@ -59,9 +64,25 @@ Check the details most likely to regress:
   icons, chevrons, or crests on mutated boards;
 - copy locale matches the recorded `design.md` locale;
 - clone leftovers: hidden or inherited out-of-scope instances are gone;
+- scope-removal leftovers: orphaned controls, chevrons, timestamps, and
+  duplicate layers tied to removed content are gone;
+- copy cardinality: badges, summaries, headings, and counts match the
+  visible list/card/row cardinality;
+- placeholder sweep: dots, generic shapes, and wrong-library stand-ins are
+  replaced with mapped file-backed assets where the target file provides
+  them;
+- control affordances: every dropdown, date pill, compare selector, and
+  expandable row has the target file's caret/chevron instance, or an
+  intentionally documented absence;
+- readable-label floor: the smallest visible labels meet the file-recorded
+  or platform-resolved minimum;
 - optical grid: compare centers and column pitch, not mere adjacency;
 - icon wrapper and vector bounds, scale, stroke/fill, and optical centering;
+- image fills remain legible and contrasted at the actual UI frame size;
 - contrast and theme-specific surface/text/icon treatment;
+- glass/material stack: parents above blurred fields do not use opaque fills
+  that hide the intended material; verify blur and shadow on intended
+  surfaces;
 - visible versus hidden labels, chevrons, toggles, submenus, and wordmarks;
 - active, selected, expanded, collapsed, disabled, loading, and error
   states;
@@ -111,6 +132,7 @@ Before reporting done, record:
 - mutated and screenshot-verified node IDs;
 - structural assertions and their result;
 - visual QA tiers used;
+- structural/family pass and designer-detail finish pass, with their results;
 - Light/Dark and family coverage;
 - intentional exceptions and placeholders;
 - remaining issues or documentation debt;
