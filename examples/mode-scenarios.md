@@ -1,6 +1,6 @@
 # Mode scenarios
 
-Seven worked scenarios illustrating mode choice and required evidence. They
+Nine worked scenarios illustrating mode choice and required evidence. They
 are generic patterns, not project history: as your own workspace accumulates
 dated session notes under `docs/sessions/`, cite those instead — real
 evidence from the target project always outranks these illustrations.
@@ -136,3 +136,26 @@ instances (nav, category bar, overflow/clip). Replace every character-as-icon
 with a file-backed instance; if a variant is missing, use another file-backed
 graphic, not invented text. Remove hidden out-of-scope leftovers. Screenshot
 the whole family and confirm zero `TEXT` icons.
+
+## 8. QA escalation: designer-detail after structural pass
+
+**Finding:** A restyle passes structural checks and looks coherent at board
+scale, but the finish audit finds placeholder markers, a wrong library asset,
+copy-count drift, a missing caret, or opaque chrome hiding an intended blur.
+
+**Action:** Do not close out after the structural pass. Run the
+designer-detail pass yourself, even when no human designer is in the loop:
+replace placeholders with mapped file-backed assets, compare copy counts to
+visible rows/cards, verify every control affordance, and inspect the material
+stack. Recapture focused, full-board, and family evidence.
+
+## 9. QA escalation: content growth without chrome re-anchor
+
+**Finding:** A root grows to fit new content, but bottom navigation, a footer,
+or a home indicator remains at its old position. A fixed-width pill may also
+wrap, or a selector may imply a choice that the current state does not offer.
+
+**Action:** Re-measure the expanded root and re-anchor bottom-fixed chrome.
+Verify it clears the content, check fixed-width labels at their measured
+width, and remove or hide unsupported single-value controls. Recapture the
+new bottom edge and the related family.
