@@ -7,8 +7,6 @@ Cursor, Claude Code, Codex, and others. You can also call it `/jfd`.
 
 ![Justin Figma Design — inspect, edit, and visual QA for Figma](assets/readme/hero.jpg)
 
-![Justin Figma Design for coding agents — inspect, edit, and visually QA Figma files from your coding workflow](assets/readme/workflow.jpg)
-
 > ⚠️ **Required for real Figma work:**
 > [Figma Console MCP](https://github.com/southleft/figma-console-mcp) is the
 > bridge between your AI app and Figma. This skill is the recipe; Console MCP
@@ -24,6 +22,8 @@ Cursor, Claude Code, Codex, and others. You can also call it `/jfd`.
 The local MCP server and **Desktop Bridge** are required for Figma edits and
 screenshots. The hosted or remote connection is for looking and investigating
 only.
+
+![Justin Figma Design for coding agents — inspect, edit, and visually QA Figma files from your coding workflow](assets/readme/workflow.jpg)
 
 ## Install the skill
 
