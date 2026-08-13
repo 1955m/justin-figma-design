@@ -1,11 +1,11 @@
-# Justin Figma Design
+# Justin Figma Design Skill
+
+![Justin Figma Design — inspect, edit, and visual QA for Figma](assets/readme/hero.jpg)
 
 `justin-figma-design` helps your AI work with Figma: inspect screens, improve
 spacing, review components, check themes, and visually QA the result. It is
 agent-agnostic and works with any Agent Skills-compatible AI app, including
 Cursor, Claude Code, Codex, and others. You can also call it `/jfd`.
-
-![Justin Figma Design — inspect, edit, and visual QA for Figma](assets/readme/hero.jpg)
 
 > ⚠️ **Required for real Figma work:**
 > [Figma Console MCP](https://github.com/southleft/figma-console-mcp) is the
