@@ -1,6 +1,6 @@
 # Mode scenarios
 
-Six worked scenarios illustrating mode choice and required evidence. They
+Seven worked scenarios illustrating mode choice and required evidence. They
 are generic patterns, not project history: as your own workspace accumulates
 dated session notes under `docs/sessions/`, cite those instead — real
 evidence from the target project always outranks these illustrations.
@@ -123,3 +123,16 @@ fixed-height content preserved from the old absolute composition.
 **Action:** Stop preserving coordinates. Group content semantically, replace
 spacers with padding/gap, choose Hug/Fill/Fixed per axis, re-anchor sheets
 and dialogs, then run family screenshots plus a zero-spacer audit.
+
+## 7. QA escalation: shell identity regression
+
+**Finding:** A cloned extra page looks right at board scale, but the shared
+nav was rebuilt as a custom frame. Chevrons are typed `v` / `^` text, and
+missing crests are letter initials. Hidden leftover controls from the source
+shell are still in the tree.
+
+**Action:** Stop restyling content. Restore the measured nested chrome
+instances (nav, category bar, overflow/clip). Replace every character-as-icon
+with a file-backed instance; if a variant is missing, use another file-backed
+graphic, not invented text. Remove hidden out-of-scope leftovers. Screenshot
+the whole family and confirm zero `TEXT` icons.

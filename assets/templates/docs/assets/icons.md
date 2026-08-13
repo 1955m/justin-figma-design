@@ -15,6 +15,11 @@ Prefer existing icon instances over importing a visually similar
 replacement. Do not invent a custom icon when an approved library covers
 the metaphor.
 
+Never use a character, punctuation glyph, or letter initials as an icon,
+chevron, or image substitute. A `TEXT` node is not an icon. If a specific
+variant is missing, use another file-backed graphic from the same library —
+not invented initials or typed arrows.
+
 ## Figma placement
 
 - Default to the icon frame size already used by the target file (measure
@@ -30,6 +35,8 @@ the metaphor.
 
 ## Icon QA
 
+- [ ] The mark is a file-backed instance or vector, not a `TEXT` glyph.
+- [ ] No letter initials stand in for a crest, avatar, or brand mark.
 - [ ] Frame and descendant vector bounds are correct.
 - [ ] No vector is outside the frame or unintentionally clipped.
 - [ ] Stroke/fill and visual weight match neighboring icons.

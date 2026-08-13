@@ -23,10 +23,14 @@ every entry dated — later sessions trust these values instead of guessing.
 - Primary page(s):
 - Primary section/frame:
 - Authority decision:
+- Shell / chrome authority (nav, status, footer, overflow/clip):
+- Content / component authority (tables, cards, controls, copy):
+- Attached-screenshot role (names and scope only, unless the user says it is visual authority):
 - Protected originals or archive pages:
 
 ## Design language
 
+- Locale / copy script (measured from product screens, with date):
 - Typography (measured or confirmed, with date):
 - Color and theme rules:
 - Spacing, radius, and elevation:

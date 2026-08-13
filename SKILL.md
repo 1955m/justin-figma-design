@@ -121,15 +121,21 @@ a second board. Full router and checklists:
    read `screens.md` for screen, flow, or composed-surface work.
 3. Read the latest relevant session note. The living `design.md` and current
    authority outrank stale historical notes.
-4. Confirm the active Figma file, page, section/frame, and authority.
-   Re-search node IDs, components, variables, and styles in the connected
+4. Confirm the active Figma file, page, section/frame, and **split
+   authorities**: shell/chrome, content/components, and any attached
+   screenshot. An attached image is names and scope only unless the user
+   says it is visual authority. Measure copy locale from the product
+   screens, not from a nearby extra page or the request's script.
+5. Re-search node IDs, components, variables, and styles in the connected
    file; IDs from prior sessions are stale evidence, not authorization.
-5. Inventory the whole same-frame/state family before a shared change:
+   Inspect the source screen's instance tree — an empty name search is not
+   "no components."
+6. Inventory the whole same-frame/state family before a shared change:
    light/dark, expanded/collapsed, nested active routes, overlays, responsive
    variants, and intentionally removed states.
-6. Measure the root frame(s) of the family being edited. Never assume a
+7. Measure the root frame(s) of the family being edited. Never assume a
    device size.
-7. Before text mutation, inspect styled font segments and load the current
+8. Before text mutation, inspect styled font segments and load the current
    fonts. Choose any replacement font via the resolution order — measured
    text, then `design.md`, then the user — never from this skill.
 
@@ -142,14 +148,21 @@ ask.
 Before placing icons or imported imagery, read `docs/assets/README.md` and
 `docs/assets/icons.md` at the workspace root. Prefer existing file components
 and the project's approved icon sources; inspect vector bounds, sizing, and
-theme contrast before accepting a new graphic. Avatars are user-provided
-only; never generate them.
+theme contrast before accepting a new graphic. Never use a character,
+punctuation glyph, or letter initials as an icon, chevron, or image
+substitute. Search instances on the source screen first; if a variant is
+missing, use another file-backed graphic, not invented text. Avatars are
+user-provided only; never generate them.
 
 ## Non-YOLO contract
 
 - Search authoritative local instances/components first, then enabled
   libraries, then broader library search. Create only after documenting the
-  gap.
+  gap. Name-search returning empty is not proof the file has no components.
+- Preserve the measured nested chrome tree (nav, category bar, overflow and
+  clip). Do not replace it with a hand-built twin. After cloning a shell,
+  audit hidden and inherited children and remove out-of-scope leftovers
+  before restyling content.
 - Build the minimum coherent design system for the approved scope: variables
   and modes first, then styles and components, then screen instances.
 - Use variants for structural/visual states and component properties for
@@ -209,7 +222,8 @@ Full checklists: [references/qa-and-recovery.md](references/qa-and-recovery.md).
   boundaries.
 - Update the target `design.md` and `screens.md` when authority, components,
   variables, screens, root sizes, or drift changed — including any value
-  resolved during the session.
+  resolved during the session. If the authority *role* changed (shell vs
+  content vs screenshot), update `docs/FILES.md` too.
 - Write a dated note under `docs/sessions/` for meaningful work.
 
 Honor the target file's documented protections in its `design.md`: locked or

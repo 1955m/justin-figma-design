@@ -5,6 +5,8 @@
 For non-YOLO work, search in this order:
 
 1. Existing instances and main components on the authoritative target pages.
+   Inspect the source screen's instance tree. A name search that returns
+   empty is not proof the file has no components.
 2. Local variables, styles, and component sets in the target file.
 3. Enabled/published libraries already connected to the file.
 4. Broader library search, scoped to the relevant library where possible.
@@ -13,6 +15,12 @@ For non-YOLO work, search in this order:
 
 Do not treat an old archive page or a visually similar component in another
 file as authoritative without checking the target file's `design.md`.
+
+Rebuilding shared chrome (nav, category bar, overflow/clip) as a hand-built
+twin is a breaking identity change, not a local restyle. Preserve the
+measured nested instance tree. After cloning a shell, audit hidden and
+inherited children and remove out-of-scope leftovers before restyling
+content.
 
 If a compatible component exists, instantiate it and preserve its link. Do
 not detach it merely to make a local edit. If the API is close but not

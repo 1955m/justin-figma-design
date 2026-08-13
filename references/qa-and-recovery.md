@@ -55,6 +55,11 @@ Check the details most likely to regress:
 - equal gaps, padding rhythm, and useful space utilization;
 - clipping, overflow, and long-copy wrapping;
 - text family, weight, size, tracking, and font loading;
+- icon identity: no `TEXT` glyphs, typed arrows, or letter initials used as
+  icons, chevrons, or crests on mutated boards;
+- copy locale matches the recorded `design.md` locale;
+- clone leftovers: hidden or inherited out-of-scope instances are gone;
+- optical grid: compare centers and column pitch, not mere adjacency;
 - icon wrapper and vector bounds, scale, stroke/fill, and optical centering;
 - contrast and theme-specific surface/text/icon treatment;
 - visible versus hidden labels, chevrons, toggles, submenus, and wordmarks;
@@ -110,4 +115,5 @@ Before reporting done, record:
 - intentional exceptions and placeholders;
 - remaining issues or documentation debt;
 - updates made to `design.md`, `screens.md`, and the dated session note,
-  including any value resolved via the resolution order this session.
+  including any value resolved via the resolution order this session;
+- `docs/FILES.md` updated when the authority role changed.
