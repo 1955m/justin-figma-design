@@ -12,8 +12,9 @@ description: >-
   style preferences by measuring the target file and workspace memory, never
   from fixed rules. Defaults to production-quality non-YOLO work behind a
   plan gate; supports an explicitly requested YOLO path for one disposable
-  board. Does not generate design-to-code unless requested. Also invoked as
-  justin-figma-design or /jfd.
+  board. Supports human–AI collaboration and can run as a full designer
+  replacement when no human is present. Does not generate design-to-code
+  unless requested. Also invoked as justin-figma-design or /jfd.
 compatibility: >-
   All Figma inspection, mutation, and screenshots require Figma Console MCP
   (user-figma-console). Write work needs the local/NPX server with the Figma
@@ -27,10 +28,13 @@ metadata:
 # Justin Figma Design (/jfd)
 
 This workspace is a Figma-first collaboration workspace, not an application
-codebase. This skill is the orchestration layer: workspace memory, the Figma
-Console workflow, design-system discipline, and evidence-based visual QA. Do
-not generate React, HTML, or CSS unless the user explicitly requests
-design-to-code.
+codebase. This skill is a human–AI collaboration process tool and an
+orchestration layer: workspace memory, the Figma Console workflow,
+design-system discipline, and evidence-based visual QA. It can also run as a
+full designer replacement: inspect, restyle, QA, and close out without a
+human on the canvas. A human may or may not join; either way, keep the same
+finish bar to speed up design without lowering quality. Do not generate React,
+HTML, or CSS unless the user explicitly requests design-to-code.
 
 ## Required MCP companion
 
@@ -121,11 +125,13 @@ a second board. Full router and checklists:
    read `screens.md` for screen, flow, or composed-surface work.
 3. Read the latest relevant session note. The living `design.md` and current
    authority outrank stale historical notes.
-4. Confirm the active Figma file, page, section/frame, and **split
-   authorities**: shell/chrome, content/components, and any attached
-   screenshot. An attached image is names and scope only unless the user
-   says it is visual authority. Measure copy locale from the product
-   screens, not from a nearby extra page or the request's script.
+4. Confirm the active Figma file, page, target section/frame, mutation
+   boundary, and **split authorities**: shell/chrome, content/components,
+   and any attached screenshot. Historical and reference sections are
+   read-only unless the user puts them in scope. An attached image is names
+   and scope only unless the user says it is visual authority. Measure copy
+   locale from the product screens, not from a nearby extra page or the
+   request's script.
 5. Re-search node IDs, components, variables, and styles in the connected
    file; IDs from prior sessions are stale evidence, not authorization.
    Inspect the source screen's instance tree — an empty name search is not
@@ -205,9 +211,12 @@ evidence — capture, as applicable: (1) a focused component crop, (2) the full
 board, (3) the related family or section overview. Check shared edges,
 spacing, clipping, overflow, long-copy behavior, icon/vector bounds,
 contrast, typography, hidden controls, semantic state, related-state parity,
-hard-coded values, unresolved bindings, and Light/Dark resolution. Use Figma
-Check designs when available; otherwise run equivalent structural and manual
-checks.
+hard-coded values, unresolved bindings, and Light/Dark resolution. Treat this
+structural/family pass as incomplete until the agent runs the
+designer-detail finish pass itself: check placeholders, copy-count parity,
+control affordances, material transparency, and image-fill legibility. Do
+not defer that pass to a human. Use Figma Check designs when available;
+otherwise run equivalent structural and manual checks.
 
 Treat a failed `figma_execute` as potentially partial until the target is
 inspected; never blindly rerun a failed creation or reparenting script.
@@ -220,6 +229,8 @@ Full checklists: [references/qa-and-recovery.md](references/qa-and-recovery.md).
   member.
 - Record intentional exceptions, placeholders, unresolved issues, and scope
   boundaries.
+- Name intentionally deferred family members and stale siblings not updated.
+  Do not report done while placeholder markers remain.
 - Update the target `design.md` and `screens.md` when authority, components,
   variables, screens, root sizes, or drift changed — including any value
   resolved during the session. If the authority *role* changed (shell vs
