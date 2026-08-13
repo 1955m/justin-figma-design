@@ -32,6 +32,11 @@ not invented initials or typed arrows.
 - Use component instances or instance-swap properties for reusable icons.
 - Bind icon color to semantic theme variables when the target system
   supports them.
+- For image fills such as crests, logos, and photos, measure the actual
+  frame and verify the fill's scale mode, contrast, and legibility at UI
+  size.
+- Do not detach protected masters to substitute imagery. Preserve instances
+  and use clipped frames or approved instance-swap properties.
 
 ## Icon QA
 
@@ -41,6 +46,10 @@ not invented initials or typed arrows.
 - [ ] No vector is outside the frame or unintentionally clipped.
 - [ ] Stroke/fill and visual weight match neighboring icons.
 - [ ] The icon is optically centered and legible at actual UI size.
+- [ ] Image fills use the measured scale mode and remain legible at the
+      actual frame size.
 - [ ] Light/Dark contrast and semantic color binding are correct.
 - [ ] The icon does not collide with labels, dividers, or controls.
+- [ ] Protected masters remain attached; imagery changes use instances,
+      clipped frames, or approved swaps.
 - [ ] Focused component and full-board screenshots have been checked.
