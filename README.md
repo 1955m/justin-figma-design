@@ -5,6 +5,10 @@ spacing, review components, check themes, and visually QA the result. It is
 agent-agnostic and works with any Agent Skills-compatible AI app, including
 Cursor, Claude Code, Codex, and others. You can also call it `/jfd`.
 
+![Justin Figma Design — inspect, edit, and visual QA for Figma](assets/readme/hero.svg)
+
+![Justin Figma Design for coding agents — inspect, edit, and visually QA Figma files from your coding workflow](assets/readme/workflow.svg)
+
 > ⚠️ **Required for real Figma work:**
 > [Figma Console MCP](https://github.com/southleft/figma-console-mcp) is the
 > bridge between your AI app and Figma. This skill is the recipe; Console MCP
