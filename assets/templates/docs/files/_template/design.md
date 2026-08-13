@@ -27,6 +27,8 @@ every entry dated — later sessions trust these values instead of guessing.
 - Content / component authority (tables, cards, controls, copy):
 - Attached-screenshot role (names and scope only, unless the user says it is visual authority):
 - Protected originals or archive pages:
+- Mutation boundary (target section/frame):
+- Read-only historical/reference sections:
 
 ## Design language
 
@@ -66,6 +68,8 @@ every entry dated — later sessions trust these values instead of guessing.
 ## QA contract
 
 - Required family members:
+- Related sub-families and in-scope members:
+- Deferred or out-of-scope members and stale-sibling status:
 - Screenshot references:
 - Structural checks:
 - Visual/detail checks:
