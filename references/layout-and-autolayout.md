@@ -62,7 +62,13 @@ For every resized parent, inspect:
 4. form fields, inputs, and nested labels;
 5. header spacers, action groups, icons, and empty states;
 6. left/right content edges and alignment with sibling sections;
-7. overflow, clipping, and useful space utilization at each supported width.
+7. overflow, clipping, and useful space utilization at each supported width;
+8. bottom-fixed chrome such as navigation, footers, and home indicators
+   after root-height changes — re-anchor it and verify it clears content;
+9. fixed-width pills and controls — confirm labels do not wrap at the
+   measured width;
+10. selectors and controls whose implied choices still exist in the current
+    data/state — remove or hide single-value controls that promise no choice.
 
 Compare descendant bounds with every relevant ancestor, not only the
 top-level board. A clean board screenshot can hide a nested field twice as
